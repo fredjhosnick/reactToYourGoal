@@ -1,0 +1,111 @@
+:root {
+  --absoluteDarkColor: #000;
+  --absoluteLightColor: #fff;
+  --primayColor: #055a69;
+  --primaryLightColor: #0097b2;
+  --secondaryColor: #e4e4e7;
+  --textDarkColor: #191919;
+  --textLightColor: #303031;
+  --textLightgrayColor: #b5b5b9;
+}
+
+.our-courses-container {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 30px auto 20px;
+}
+.our-courses-cards {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+.our-courses-items {
+  width: 350px;
+  height: 410px;
+  padding: 10px;
+  background-color: var(--secondaryColor);
+  border-radius: 10px;
+}
+.our-courses-items .image {
+  width: 350px;
+  height: 170px;
+  margin: auto;
+  object-position: top initial;
+  border-radius: 10px;
+}
+.our-courses-cards .image img {
+  width: 350px;
+  height: 170px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.details-our-course {
+  width: 300px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px;
+
+  color: var(--textLightColor);
+}
+.time-level-ourcourses {
+  width: 230px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 5px;
+  gap: 10px;
+  font-size: 12px;
+}
+.time-level-ourcourses h5 {
+  border: 1px solid var(--textLightColor);
+  border-radius: 10px;
+  padding: 5px;
+  font-size: 15px;
+}
+.name-teacher-our-couses {
+  width: 100px;
+  width: 40px;
+  text-align: start;
+  margin: 0 5px;
+  font-size: 25px;
+  color: var(--primaryLightColor);
+}
+.content-our-course {
+  margin: auto 20px;
+}
+.content-our-course h3 {
+  font-size: 20px;
+  width: 330px;
+}
+.content-our-course p {
+  font-size: 12px;
+  width: 290px;
+  height: 60px;
+  margin: 0 auto;
+}
+.btn {
+  text-align: center;
+  width: 250px;
+  margin: 0 auto;
+}
+.btn a button {
+  width: 100%;
+  border-radius: 10px;
+  font-size: 20px;
+  margin: 5px auto;
+  padding: 15px;
+
+  border: none;
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+.btn button:hover {
+  background-color: var(--primaryLightColor);
+  color: var(--absoluteLightColor);
+}

@@ -1,0 +1,118 @@
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  background-color: var(--secondaryColor);
+  color: var(--textLightColor);
+}
+.contact {
+  margin: 10px 10px 10px 110px;
+}
+.contact ul {
+  list-style: none;
+}
+.contact ul li {
+  margin: 10px auto;
+}
+.contact ul li span {
+  color: var(--primaryLightColor);
+}
+.contact img {
+  width: 90px;
+  height: 40px;
+}
+.footer-info {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 145px 10px 10px;
+}
+.footer-social-profiles ul li a img {
+  width: 30px;
+  height: 30px;
+}
+.social-profiles ul {
+  display: flex;
+  flex-direction: row;
+}
+.footer-info ul {
+  list-style: none;
+}
+.footer-info ul li {
+  color: var(--textDarkColor);
+  font-weight: 800;
+  font-size: 20px;
+}
+.footer-home ul li {
+  margin: 10px auto;
+}
+.footer-about-us ul li {
+  margin: 10px auto;
+}
+.footer-info ul li a {
+  text-decoration: none;
+  color: var(--textLightColor);
+  font-weight: 400;
+  font-size: 16px;
+}
+.social-profiles ul li a .img {
+  border-radius: 50%;
+  margin: auto;
+  width: 50px;
+}
+@media only screen and (max-width: 800px) {
+  .contact {
+    margin: 5px;
+  }
+  .contact ul {
+    list-style: none;
+  }
+  .contact ul li {
+    margin: 40px auto;
+  }
+  .contact ul li span {
+    color: var(--primaryLightColor);
+  }
+  .contact img {
+    width: 90px;
+    height: 40px;
+  }
+  .footer-info {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+  }
+  .footer-social-profiles ul li a img {
+    width: 30px;
+    height: 30px;
+  }
+  .social-profiles ul {
+    display: flex;
+    flex-direction: row;
+  }
+  .footer-info ul {
+    list-style: none;
+    margin: 5px auto;
+  }
+  .footer-info ul li {
+    color: var(--textDarkColor);
+    font-weight: 800;
+    font-size: 20px;
+  }
+  .footer-home ul li {
+    margin: 5px auto;
+  }
+  .footer-about-us ul li {
+    margin: 5px auto;
+  }
+  .footer-info ul li a {
+    text-decoration: none;
+    color: var(--textLightColor);
+    font-weight: 400;
+    font-size: 16px;
+  }
+  .social-profiles ul li a .img {
+    border-radius: 50%;
+    margin: auto 5px;
+  }
+}

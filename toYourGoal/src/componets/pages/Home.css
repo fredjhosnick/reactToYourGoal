@@ -1,0 +1,383 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap");
+
+:root {
+  --absoluteDarkColor: #000;
+  --absoluteLightColor: #fff;
+  --primayColor: #055a69;
+  --primaryLightColor: #0097b2;
+  --secondaryColor: #e4e4e7;
+  --textDarkColor: #191919;
+  --textLightColor: #303031;
+  --textLightgrayColor: #b5b5b9;
+}
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px auto 0px;
+  text-align: center;
+}
+.textBanner span {
+  color: var(--primaryLightColor);
+  font-size: 48px;
+}
+.textBanner h2 span {
+  font-size: 38px;
+  font-weight: 400;
+}
+
+.textBanner h1 {
+  font-weight: 600;
+  font-size: 48px;
+}
+.textBanner h2 {
+  font-size: 48px;
+  font-weight: 400;
+}
+.textBanner p {
+  font-size: 24px;
+  font-weight: 300;
+}
+.btn-banner .explore-course {
+  width: 210px;
+  height: 65px;
+  background-color: var(--primaryLightColor);
+  color: var(--absoluteLightColor);
+  border: none;
+  font-size: 24px;
+  font-weight: 500;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 2px 2px #59595a;
+}
+.btn-banner .explore-course:hover {
+  background-color: var(--primayColor);
+}
+
+.benefits-container {
+  margin: 50px 55px 10px;
+  color: var(--textLightColor);
+}
+.text-benifits {
+  padding: 0 40px;
+  text-align: start;
+  margin: 10px 55px 5px;
+  color: var(--textLightColor);
+}
+.benefits-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.benefits-card-items {
+  width: 360px;
+  height: 320px;
+  padding: 15px;
+  background-color: var(--secondaryColor);
+  border-radius: 10px;
+}
+.benefits-card-items h2 {
+  text-align: end;
+  color: var(--textLightColor);
+}
+.benefits-card-items h2 span {
+  color: var(--primaryLightColor);
+  font-size: 50px;
+}
+
+.benefits-card-items h3 {
+  color: var(--textLightColor);
+}
+/* ============================================================== */
+
+.frequently-answer-container {
+  width: 80%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+  background-color: var(--secondaryColor);
+  margin: 20px auto;
+  border-radius: 10px;
+  color: var(--textLightColor);
+
+  padding: 10px;
+}
+.question-answer-item {
+  margin: 15px auto;
+}
+.question {
+  width: 85%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 10px;
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid var(--textLightColor);
+}
+.errollment-our-courses {
+  width: 85%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 25px;
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid var(--textLightColor);
+}
+.anwer {
+  width: 80%;
+}
+.question-answer-item button {
+  border: none;
+  border-radius: 5px;
+}
+.question-answer-item button:hover {
+  background-color: var(--primaryLightColor);
+  color: var(--absoluteLightColor);
+}
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  background-color: var(--secondaryColor);
+  color: var(--textLightColor);
+}
+.contact {
+  margin: 10px 10px 10px 110px;
+}
+.contact ul {
+  list-style: none;
+}
+.contact ul li {
+  margin: 10px auto;
+}
+.contact ul li span {
+  color: var(--primaryLightColor);
+}
+.contact img {
+  width: 90px;
+  height: 40px;
+}
+.footer-info {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 145px 10px 10px;
+}
+.footer-social-profiles ul li a img {
+  width: 30px;
+  height: 30px;
+}
+.social-profiles ul {
+  display: flex;
+  flex-direction: row;
+}
+.footer-info ul {
+  list-style: none;
+}
+.footer-info ul li {
+  color: var(--textDarkColor);
+  font-weight: 800;
+  font-size: 20px;
+}
+.footer-home ul li {
+  margin: 10px auto;
+}
+.footer-about-us ul li {
+  margin: 10px auto;
+}
+.footer-info ul li a {
+  text-decoration: none;
+  color: var(--textLightColor);
+  font-weight: 400;
+  font-size: 16px;
+}
+.social-profiles ul li a img {
+  border-radius: 50%;
+  margin: auto 5px;
+}
+
+@media only screen and (max-width: 800px) {
+  .nav .logo {
+    margin: 20px 0;
+  }
+  .navBar .main-menu {
+    height: 110vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+    align-items: center;
+    background-color: var(--textLightgrayColor);
+    transition: top 1s ease;
+    display: none;
+  }
+  .nav li a {
+    font-size: 25px;
+    font-weight: 800;
+    color: var(--absoluteLightColor);
+  }
+  .open-menu .open {
+    display: block;
+    top: 20px;
+    right: -15px;
+    position: fixed;
+  }
+  .close-menu .close {
+    display: block;
+    position: absolute;
+    top: 100px;
+    right: 20px;
+  }
+
+  .join {
+    display: none;
+  }
+  .banner {
+    margin: 50px auto;
+  }
+  .textBanner span {
+    color: var(--primaryLightColor);
+    font-size: 45px;
+  }
+  .textBanner h2 span {
+    font-size: 30px;
+    font-weight: 400;
+  }
+
+  .textBanner h1 {
+    font-weight: 600;
+    font-size: 45px;
+  }
+  .textBanner h2 {
+    font-size: 30px;
+    font-weight: 400;
+  }
+  .textBanner p {
+    font-size: 18px;
+    font-weight: 300;
+  }
+  .btn-banner .explore-course {
+    width: 200px;
+    height: 60px;
+    background-color: var(--primaryLightColor);
+    color: var(--absoluteLightColor);
+    border: none;
+    font-size: 22px;
+    font-weight: 500;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 2px 2px #59595a;
+  }
+  .btn-banner .explore-course:hover {
+    background-color: var(--primayColor);
+  }
+
+  .text-benifits {
+    padding: 0;
+    text-align: center;
+    margin: 5px 0 5px;
+    color: var(--textLightColor);
+  }
+
+  .frequently-answer-container {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .question {
+    width: 80%;
+    gap: 10px;
+    margin: 10px;
+    padding: 10px;
+  }
+  .errollment-our-courses {
+    width: 80%;
+    margin: 10px;
+    display: flex;
+    padding: 10px;
+    gap: 25px;
+  }
+  .anwer {
+    width: 80%;
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .question-answer-item button {
+    border: none;
+    border-radius: 5px;
+  }
+  .question-answer-item button:hover {
+    background-color: var(--primaryLightColor);
+    color: var(--absoluteLightColor);
+  }
+  /* Footer */
+
+  .contact {
+    margin: 5px;
+  }
+  .contact ul {
+    list-style: none;
+  }
+  .contact ul li {
+    margin: 40px auto;
+  }
+  .contact ul li span {
+    color: var(--primaryLightColor);
+  }
+  .contact img {
+    width: 90px;
+    height: 40px;
+  }
+  .footer-info {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+  }
+  .footer-social-profiles ul li a img {
+    width: 30px;
+    height: 30px;
+  }
+  .social-profiles ul {
+    display: flex;
+    flex-direction: row;
+  }
+  .footer-info ul {
+    list-style: none;
+    margin: 5px auto;
+  }
+  .footer-info ul li {
+    color: var(--textDarkColor);
+    font-weight: 800;
+    font-size: 20px;
+  }
+  .footer-home ul li {
+    margin: 5px auto;
+  }
+  .footer-about-us ul li {
+    margin: 5px auto;
+  }
+  .footer-info ul li a {
+    text-decoration: none;
+    color: var(--textLightColor);
+    font-weight: 400;
+    font-size: 16px;
+  }
+  .social-profiles ul li a img {
+    border-radius: 50%;
+    margin: auto 5px;
+  }
+}

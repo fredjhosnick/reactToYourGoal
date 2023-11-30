@@ -1,0 +1,15 @@
+:root {
+  --absoluteDarkColor: #000;
+  --absoluteLightColor: #fff;
+  --primayColor: #055a69;
+  --primaryLightColor: #0097b2;
+  --secondaryColor: #e4e4e7;
+  --textDarkColor: #191919;
+  --textLightColor: #303031;
+  --textLightgrayColor: #b5b5b9;
+}
+.App {
+  background-color: var(--absoluteLightColor);
+  height: 100%;
+  width: 100%;
+}

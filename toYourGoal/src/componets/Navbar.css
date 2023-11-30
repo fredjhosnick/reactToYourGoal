@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap");
+
+:root {
+  --absoluteDarkColor: #000;
+  --absoluteLightColor: #fff;
+  --primayColor: #055a69;
+  --primaryLightColor: #0097b2;
+  --secondaryColor: #e4e4e7;
+  --textDarkColor: #191919;
+  --textLightColor: #303031;
+  --textLightgrayColor: #b5b5b9;
+}
+body {
+  width: 100%;
+  background-color: var(--absoluteLightColor);
+  box-sizing: border-box;
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+.active {
+  background-color: var(--textLightgrayColor);
+  color: var(--absoluteLightColor);
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--absoluteLightColor);
+  position: sticky;
+  top: 0;
+  margin-bottom: 30px;
+}
+nav img {
+  width: 120px;
+  position: absolute;
+  top: 10px;
+  left: 80px;
+}
+nav ul {
+  display: flex;
+}
+
+nav ul li {
+  list-style: none;
+}
+nav ul li a {
+  display: block;
+  text-decoration: none;
+  color: var(--textLightColor);
+  padding: 8px;
+  margin: 0 15px;
+  border-radius: 8px;
+  font-size: 25px;
+  font-weight: 600;
+}
+nav ul li a:not(.active):hover {
+  background-color: var(--primaryLightColor);
+  color: var(--absoluteLightColor);
+}
+nav .menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 35px;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 2rem;
+  height: 2.5rem;
+}
+nav .menu span {
+  font-size: 50px;
+  color: var(--primaryLightColor);
+}
+@media only screen and (max-width: 1000px) {
+  nav .menu {
+    display: flex;
+  }
+  nav {
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    background-color: var(--absoluteLightColor);
+    width: 100%;
+  }
+  nav img {
+    width: 100px;
+    left: 0px;
+  }
+  nav ul {
+    display: none;
+    flex-direction: column;
+    width: 90%;
+    height: 100vh;
+    margin: 40px 5px 0;
+  }
+  nav ul.open {
+    display: flex;
+  }
+  nav ul li {
+    text-align: center;
+    margin: 5px auto;
+  }
+
+  nav ul li a {
+    margin: 20px auto;
+    font-size: 25px;
+  }
+  nav ul li a:not(.active):hover {
+    background-color: var(--primaryLightColor);
+    color: var(--absoluteLightColor);
+  }
+}

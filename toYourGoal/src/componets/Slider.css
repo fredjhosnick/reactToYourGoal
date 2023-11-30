@@ -1,0 +1,107 @@
+:root {
+  --absoluteDarkColor: #000;
+  --absoluteLightColor: #fff;
+  --primayColor: #055a69;
+  --primaryLightColor: #0097b2;
+  --secondaryColor: #e4e4e7;
+  --textDarkColor: #191919;
+  --textLightColor: #303031;
+  --textLightgrayColor: #b5b5b9;
+}
+
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto 10px;
+}
+.image {
+  width: 800px;
+  height: 350px;
+  border-radius: 20px;
+}
+.right-arrow {
+  position: absolute;
+  top: 80%;
+  right: 250px;
+  font-size: 3rem;
+  color: var(--primaryLightColor);
+  cursor: pointer;
+  z-index: 10;
+  user-select: none;
+}
+.left-arrow {
+  position: absolute;
+  top: 80%;
+  left: 250px;
+  font-size: 3rem;
+  cursor: pointer;
+  user-select: none;
+  color: var(--primaryLightColor);
+  z-index: 10;
+}
+.slide {
+  opacity: 0;
+  transition-duration: 1s ease;
+  border-radius: 20px;
+}
+.slide.active {
+  opacity: 1;
+  transition-duration: 0.5s;
+  transform: scale(1.08);
+}
+@media only screen and (max-width: 1400px) {
+  .image {
+    width: 800px;
+    height: 400px;
+  }
+  .right-arrow {
+    top: 70%;
+    right: 100px;
+    font-size: 3rem;
+    z-index: 10;
+  }
+  .left-arrow {
+    top: 70%;
+    left: 100px;
+    font-size: 3rem;
+    z-index: 10;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .image {
+    width: 350px;
+    height: 200px;
+  }
+  .right-arrow {
+    top: 50%;
+    right: 50px;
+    font-size: 2rem;
+    z-index: 10;
+  }
+  .left-arrow {
+    top: 50%;
+    left: 50px;
+    font-size: 2rem;
+    z-index: 10;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .image {
+    width: 350px;
+    height: 200px;
+  }
+  .right-arrow {
+    top: 60%;
+    right: 15px;
+    font-size: 2rem;
+    z-index: 10;
+  }
+  .left-arrow {
+    top: 60%;
+    left: 15px;
+    font-size: 2rem;
+    z-index: 10;
+  }
+}

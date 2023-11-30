@@ -1,0 +1,317 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap");
+
+:root {
+  --absoluteDarkColor: #000;
+  --absoluteLightColor: #fff;
+  --primayColor: #055a69;
+  --primaryLightColor: #0097b2;
+  --secondaryColor: #e4e4e7;
+  --textDarkColor: #191919;
+  --textLightColor: #303031;
+  --textLightgrayColor: #b5b5b9;
+}
+
+.container-courses {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  margin: 20px auto;
+  margin-bottom: 100px;
+}
+.left-menu {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  margin: 5px auto;
+}
+
+.category-input {
+  width: 40%;
+
+  margin: 10px auto;
+}
+.search {
+  width: 100%;
+  padding: 20px;
+  margin: 0 auto;
+  width: 100%;
+  border: 1px solid gray;
+  border-radius: 10px;
+  font-size: 25px;
+}
+
+.cats {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 10px auto;
+  width: 400px;
+  gap: 5px;
+  border-radius: 10px;
+  padding: 5px 10px;
+  text-align: center;
+}
+.cat {
+  cursor: pointer;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 300;
+  padding: 5px 10px;
+  margin: 2px auto;
+  border: 1px solid transparent;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--absoluteLightColor);
+  color: var(--absoluteLightColor);
+  background-color: var(--textLightgrayColor);
+}
+.cat:hover {
+  border: 1px solid var(--absoluteLightColor);
+  background-color: var(--primaryLightColor);
+  color: var(--absoluteLightColor);
+  padding: 5px 10px;
+}
+
+.our-courses-container-pageCourse {
+  margin: 50px 55px 20px;
+  color: var(--textLightColor);
+}
+.our-courses-container {
+  margin: 10px auto;
+}
+
+/* ================================================ */
+
+.banner-courses-container {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 50px;
+  gap: 20px;
+}
+
+.text-our-couses-pageCourse {
+  padding: 0 40px;
+  text-align: start;
+  margin: 10px 55px 5px;
+}
+
+/* =========================================================== */
+
+/* ================================================ */
+
+.btn-courses-test button {
+  background-color: var(--primaryLightColor);
+  color: var(--absoluteLightColor);
+  padding: 12px;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 10px;
+}
+.btn-courses-test button:hover {
+  background-color: var(--primayColor);
+}
+.btn-courses-test button a {
+  text-decoration: none;
+  color: var(--absoluteLightColor);
+}
+
+.curriculum-card {
+  width: 15%;
+  border: 1px solid var(--textLightgrayColor);
+  background-color: var(--textLightColor);
+  font-size: 9px;
+  padding: 2px;
+  text-align: center;
+  color: var(--absoluteLightColor);
+  border-radius: 50%;
+}
+footer {
+  position: relative;
+  height: 30vh;
+  bottom: 0;
+}
+@media only screen and (max-width: 1300px) {
+  .images-courses {
+    width: 100%;
+  }
+
+  .images-courses .imgs img {
+    width: 100%;
+    border-radius: 15px;
+  }
+  .images {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .images-courses {
+    width: 100%;
+  }
+
+  .images-courses .imgs img {
+    width: 100%;
+    border-radius: 15px;
+  }
+  .images {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .container-courses {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .left-menu {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    margin: 0px auto;
+  }
+
+  .category-input {
+    width: 80%;
+    margin: 5px auto;
+    border: none;
+    outline: none;
+  }
+  .search {
+    width: 100%;
+    padding: 10px;
+    margin: 0 auto;
+    width: 100%;
+    border: 1px solid gray;
+    border-radius: 10px;
+    font-size: 12px;
+  }
+
+  .cats {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    gap: 0px;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+  }
+  .cat {
+    cursor: pointer;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 700;
+    padding: 5px 10px;
+    border: 1px solid transparent;
+    width: 100%;
+    margin: 2px auto;
+    border-radius: 10px;
+    color: var(--absoluteLightColor);
+    background-color: var(--textLightgrayColor);
+  }
+
+  .our-courses-container-pageCourse {
+    margin: 0 20px;
+  }
+  .our-courses-cards-pageCourse {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+  }
+  .our-courses-items-pageCourse {
+    width: 380px;
+    height: 440px;
+    padding: 10px;
+    background-color: var(--secondaryColor);
+    border-radius: 10px;
+  }
+
+  .our-courses-items-pageCourse .image-pageCourse img {
+    width: 380px;
+    height: 190px;
+    margin: auto;
+    object-fit: top initial;
+  }
+  .details-our-course-pageCourse {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .name-teacher-our-couses-pageCourse h4 {
+    font-size: 12px;
+  }
+  .title-course {
+    width: 95%;
+  }
+  .our-courses-container {
+    margin: 10px auto;
+  }
+  .btn-courses-test button a {
+    text-decoration: none;
+    color: var(--absoluteLightColor);
+  }
+
+  .images-courses {
+    width: 100%;
+  }
+
+  .images-courses .imgs img {
+    width: 100%;
+    border-radius: 15px;
+  }
+  .images {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 5px;
+  }
+  .btn-pageCourse {
+    text-align: center;
+    width: 100%;
+  }
+  .btn-pageCourse button,
+  .btn-pageCourse a button {
+    width: 100%;
+    border-radius: 10px;
+
+    border: none;
+    font-family: "Be Vietnam Pro", sans-serif;
+  }
+
+  footer {
+    position: relative;
+    height: 40vh;
+    bottom: 0;
+  }
+  footer {
+    position: relative;
+    height: 40vh;
+    bottom: 0;
+  }
+}
