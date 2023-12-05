@@ -15,9 +15,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 5px auto 0px;
+  margin: 40px auto 10px;
   text-align: center;
+  font-family: "Be Vietnam Pro", sans-serif;
 }
+
 .textBanner span {
   color: var(--primaryLightColor);
   font-size: 48px;
@@ -32,12 +34,15 @@
   font-size: 48px;
 }
 .textBanner h2 {
-  font-size: 48px;
+  font-size: 38px;
   font-weight: 400;
 }
 .textBanner p {
   font-size: 24px;
   font-weight: 300;
+}
+.btn-banner a {
+  text-decoration: none;
 }
 .btn-banner .explore-course {
   width: 210px;
@@ -56,13 +61,15 @@
 }
 
 .benefits-container {
-  margin: 50px 55px 10px;
+  margin: 60px 55px 10px;
+
   color: var(--textLightColor);
 }
 .text-benifits {
+  width: 75%;
   padding: 0 40px;
   text-align: start;
-  margin: 10px 55px 5px;
+  margin: 10px auto 5px;
   color: var(--textLightColor);
 }
 .benefits-cards {
@@ -283,9 +290,10 @@ footer {
   }
 
   .text-benifits {
-    padding: 0;
-    text-align: center;
-    margin: 5px 0 5px;
+    width: 75%;
+    padding: 0 40px;
+    text-align: start;
+    margin: 10px auto 5px;
     color: var(--textLightColor);
   }
 

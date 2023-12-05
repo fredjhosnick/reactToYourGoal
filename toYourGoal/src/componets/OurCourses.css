@@ -15,6 +15,13 @@
   width: 80%;
   margin: 30px auto 20px;
 }
+.text-our-couses {
+  width: 90%;
+  padding: 0 50px;
+  text-align: start;
+  margin: 10px auto 5px;
+  color: var(--textLightColor);
+}
 .our-courses-cards {
   width: 100%;
   display: flex;
@@ -94,6 +101,9 @@
   text-align: center;
   width: 250px;
   margin: 0 auto;
+}
+.btn a {
+  text-decoration: none;
 }
 .btn a button {
   width: 100%;

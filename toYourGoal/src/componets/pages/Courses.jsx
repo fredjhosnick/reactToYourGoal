@@ -7,6 +7,7 @@ export default function Courses() {
   const [ourCoursePage, setOurCoursePage] = useState([]);
   const [search, setSearch] = useState([]);
 
+  // ========================================================================
   const filterResult = (catItem) => {
     if (catItem === "All Levels") {
       setSearch(ourCoursePage);
@@ -15,7 +16,7 @@ export default function Courses() {
       setSearch(result);
     }
   };
-
+  // ==============================================================================
   function getCoursePage() {
     Axios.get("https://thesultanmarket.com/api/v1/data.php").then((res) => {
       console.log(res.data);
@@ -27,7 +28,7 @@ export default function Courses() {
   useEffect(() => {
     getCoursePage();
   }, []);
-
+  // ================================================================================
   // Filter search=================================================
   const Filter = (event) => {
     setSearch(

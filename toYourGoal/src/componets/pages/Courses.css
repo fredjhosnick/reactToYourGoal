@@ -20,6 +20,10 @@
   padding: 20px;
   margin: 20px auto;
   margin-bottom: 100px;
+  background-image: linear-gradient(
+    var(--primaryLightColor),
+    var(--primayColor)
+  );
 }
 .left-menu {
   width: 80%;
@@ -80,16 +84,16 @@
 }
 
 .our-courses-container-pageCourse {
-  margin: 50px 55px 20px;
+  margin: 50px auto 20px;
   color: var(--textLightColor);
+  width: 100%;
 }
-.our-courses-container {
-  margin: 10px auto;
-}
+
 .our-courses-cards-pageCourse {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
 }
 .our-courses-items-pageCourse {
@@ -161,6 +165,9 @@
   font-weight: 600;
   font-family: "Be Vietnam Pro", sans-serif;
 }
+.btn-pageCourse a {
+  text-decoration: none;
+}
 
 .btn-pageCourse button:hover {
   background-color: var(--primaryLightColor);
@@ -225,11 +232,7 @@
   color: var(--absoluteLightColor);
   border-radius: 50%;
 }
-footer {
-  position: relative;
-  height: 30vh;
-  bottom: 0;
-}
+
 @media only screen and (max-width: 1300px) {
   .images-courses {
     width: 100%;
@@ -353,7 +356,7 @@ footer {
   }
 
   .name-teacher-our-couses-pageCourse h4 {
-    font-size: 12px;
+    font-size: 22px;
   }
   .title-course {
     width: 95%;

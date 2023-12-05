@@ -13,7 +13,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 30px auto 10px;
+  margin: 60px auto 100px;
 }
 .image {
   width: 800px;
@@ -22,23 +22,22 @@
 }
 .right-arrow {
   position: absolute;
-  top: 80%;
+  top: 70%;
   right: 250px;
   font-size: 3rem;
   color: var(--primaryLightColor);
   cursor: pointer;
-  z-index: 10;
+
   user-select: none;
 }
 .left-arrow {
   position: absolute;
-  top: 80%;
+  top: 70%;
   left: 250px;
   font-size: 3rem;
   cursor: pointer;
   user-select: none;
   color: var(--primaryLightColor);
-  z-index: 10;
 }
 .slide {
   opacity: 0;

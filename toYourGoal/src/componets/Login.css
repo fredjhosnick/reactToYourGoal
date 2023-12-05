@@ -1,0 +1,78 @@
+:root {
+  --absoluteDarkColor: #000;
+  --absoluteLightColor: #fff;
+  --primayColor: #055a69;
+  --primaryLightColor: #0097b2;
+  --secondaryColor: #e4e4e7;
+  --textDarkColor: #191919;
+  --textLightColor: #303031;
+  --textLightgrayColor: #b5b5b9;
+}
+
+.container-body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f4;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  text-align: center;
+  padding: 0px;
+}
+
+.form {
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  padding: 5px;
+  margin: 0px;
+  width: 100%;
+}
+
+h2 {
+  margin-bottom: 24px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+input {
+  width: 80%;
+  padding: 15px 0;
+  margin-bottom: 10px;
+  outline: none;
+  font-size: 18px;
+}
+.form a {
+  text-decoration: none;
+}
+.form a .button-signup {
+  background-color: transparent;
+  color: var(--textLightColor);
+  border: 1px solid var(--textLightColor);
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: 80%;
+}
+
+.form a button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+
+  cursor: pointer;
+  width: 80%;
+}
+
+button:hover {
+  background-color: #45a049;
+}

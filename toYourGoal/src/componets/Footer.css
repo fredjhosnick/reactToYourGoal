@@ -6,6 +6,11 @@ footer {
   background-color: var(--secondaryColor);
   color: var(--textLightColor);
 }
+footer {
+  position: relative;
+  height: 30vh;
+  bottom: 0;
+}
 .contact {
   margin: 10px 10px 10px 110px;
 }
@@ -60,6 +65,7 @@ footer {
   margin: auto;
   width: 50px;
 }
+
 @media only screen and (max-width: 800px) {
   .contact {
     margin: 5px;
@@ -76,6 +82,11 @@ footer {
   .contact img {
     width: 90px;
     height: 40px;
+  }
+  footer {
+    position: relative;
+    height: 40vh;
+    bottom: 0;
   }
   .footer-info {
     display: flex;

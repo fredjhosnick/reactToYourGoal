@@ -1,0 +1,68 @@
+:root {
+  --absoluteDarkColor: #000;
+  --absoluteLightColor: #fff;
+  --primayColor: #055a69;
+  --primaryLightColor: #0097b2;
+  --secondaryColor: #e4e4e7;
+  --textDarkColor: #191919;
+  --textLightColor: #303031;
+  --textLightgrayColor: #b5b5b9;
+}
+
+.title-container-body {
+  background-image: linear-gradient(
+    var(--primaryLightColor),
+    var(--primayColor)
+  );
+  display: flex;
+  justify-content: center;
+  align-items: start;
+
+  min-height: 100vh;
+  color: var(--textLightColor);
+}
+.title-container {
+  background-color: var(--secondaryColor);
+  width: 95%;
+  min-height: 250px;
+  margin-top: 20px;
+  min-height: min-content;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.title {
+  width: 85%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.title h2 {
+  width: 40%;
+  font-size: 48;
+}
+.title p {
+  width: 40%;
+}
+.description-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+}
+.description-card {
+  width: 100%;
+  border-radius: 10px;
+  width: 500px;
+  background-color: var(--absoluteLightColor);
+  padding: 10px;
+}
+.description-icon .icon-style {
+  color: var(--primaryLightColor);
+  font-size: 20px;
+}

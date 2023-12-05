@@ -27,7 +27,7 @@ nav {
   background-color: var(--absoluteLightColor);
   position: sticky;
   top: 0;
-  margin-bottom: 30px;
+  margin: 10px;
 }
 nav img {
   width: 120px;
