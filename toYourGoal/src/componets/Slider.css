@@ -95,12 +95,12 @@
     top: 60%;
     right: 15px;
     font-size: 2rem;
-    z-index: 10;
+    z-index: 0;
   }
   .left-arrow {
     top: 60%;
     left: 15px;
     font-size: 2rem;
-    z-index: 10;
+    z-index: 0;
   }
 }

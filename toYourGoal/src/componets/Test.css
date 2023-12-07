@@ -68,9 +68,12 @@
 .question-text {
   margin-bottom: 12px;
 }
+.difficulty-container {
+  width: 80%;
+}
 .difficulty {
   width: 80%;
-  height: 40%;
+  height: 60%;
   border-radius: 15px;
   font-size: 15px;
   outline: none;
@@ -85,6 +88,7 @@
   margin: 5px auto;
   text-align: center;
 }
+
 button {
   width: 100%;
   font-size: 20px;
@@ -100,7 +104,7 @@ button {
   margin: 3px auto;
 }
 
-.correct {
+.selected {
   background-color: green;
 }
 button:hover {
@@ -119,6 +123,16 @@ button svg {
 }
 .bt-na {
   text-decoration: none;
+}
+.actions a {
+  text-decoration: none;
+  width: 100%;
+}
+
+.actions a button {
+  background-color: var(--primayColor);
+  justify-content: center;
+  width: 60%;
 }
 .actions button {
   background-color: var(--primayColor);

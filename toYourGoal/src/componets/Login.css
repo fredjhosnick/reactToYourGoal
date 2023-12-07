@@ -25,12 +25,20 @@
 }
 
 .form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: #ffffff;
   border: 1px solid #dddddd;
   border-radius: 8px;
   padding: 5px;
-  margin: 0px;
+  margin: auto;
   width: 100%;
+}
+.info-form {
+  width: 80%;
+  margin: 5px auto;
 }
 
 h2 {
@@ -41,28 +49,26 @@ label {
   display: block;
   margin-bottom: 10px;
   font-size: 18px;
+  text-align: start;
 }
 
 input {
-  width: 80%;
+  width: 100%;
   padding: 15px 0;
+
   margin-bottom: 10px;
   outline: none;
   font-size: 18px;
 }
+
+.form .info-form .text-error {
+  color: red;
+}
 .form a {
   text-decoration: none;
 }
-.form a .button-signup {
-  background-color: transparent;
-  color: var(--textLightColor);
-  border: 1px solid var(--textLightColor);
-  margin-bottom: 10px;
-  margin-top: 10px;
-  width: 80%;
-}
 
-.form a button {
+.btn-form button {
   background-color: #4caf50;
   color: white;
   padding: 10px;
@@ -70,9 +76,17 @@ input {
   border-radius: 4px;
 
   cursor: pointer;
-  width: 80%;
+  width: 100%;
 }
 
 button:hover {
   background-color: #45a049;
+}
+.form .button-signup {
+  background-color: transparent;
+  color: var(--textLightColor);
+  border: 1px solid var(--textLightColor);
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: 100%;
 }

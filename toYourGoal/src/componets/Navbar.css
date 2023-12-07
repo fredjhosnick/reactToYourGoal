@@ -28,6 +28,7 @@ nav {
   position: sticky;
   top: 0;
   margin: 10px;
+  z-index: 10;
 }
 nav img {
   width: 120px;
@@ -80,6 +81,7 @@ nav .menu span {
     justify-content: space-between;
     background-color: var(--absoluteLightColor);
     width: 100%;
+    z-index: 5;
   }
   nav img {
     width: 100px;
@@ -88,6 +90,7 @@ nav .menu span {
   nav ul {
     display: none;
     flex-direction: column;
+
     width: 90%;
     height: 100vh;
     margin: 40px 5px 0;

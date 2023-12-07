@@ -2,50 +2,50 @@ import React, { useState } from "react";
 import "./Test.css";
 import questions from "../QuizData";
 import TestResult from "./TestResult";
+import { Link } from "react-router-dom";
 
 export default function Test() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  // const [score, setScore] = useState(0);
   const [correctAnswer, setCorrectAnswer] = useState(0);
-  const [showresult, setShowResult] = useState(false);
-  const [isAnswered, setIsAnswered] = useState(false); // Track whether the question is answered
+  const [showResult, setShowResult] = useState(false);
+  const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [quest, setQuest] = useState(questions.length);
+  const [testStarted, setTestStarted] = useState(false);
 
-  const handleAnswer = (isCorrect) => {
+  const handleAnswer = (isCorrect, index) => {
+    setSelectedAnswer(index); // Almacena la respuesta seleccionada
     if (isCorrect) {
-      setCorrectAnswer(correctAnswer);
+      setCorrectAnswer(correctAnswer + 1);
     }
-    setIsAnswered(true);
   };
 
   const handleNext = () => {
-    if (isAnswered) {
-      setCorrectAnswer(correctAnswer + 1);
-    }
-
     const nextQuestion = currentQuestion + 1;
 
     if (nextQuestion < quest) {
       setCurrentQuestion(nextQuestion);
-      setIsAnswered(false);
+      setSelectedAnswer(null);
     } else {
       setShowResult(true);
     }
   };
+
   const handleDifficulty = (e) => {
-    let value = e.target.value;
-    if (value === "A1") {
-      setQuest(6);
-    } else if (value === "A2") {
-      setQuest(12);
-    } else if (value === "B1") {
-      setQuest(30);
-    } else if (value === "B2") {
-      setQuest(36);
-    } else if (value === "C1") {
-      setQuest(42);
-    } else if (value === "C2") {
-      setQuest(50);
+    if (!testStarted) {
+      let value = e.target.value;
+      if (value === "A1") {
+        setQuest(6);
+      } else if (value === "A2") {
+        setQuest(12);
+      } else if (value === "B1") {
+        setQuest(30);
+      } else if (value === "B2") {
+        setQuest(36);
+      } else if (value === "C1") {
+        setQuest(42);
+      } else if (value === "C2") {
+        setQuest(50);
+      }
     }
   };
 
@@ -53,12 +53,15 @@ export default function Test() {
     setCurrentQuestion(0);
     setCorrectAnswer(0);
     setShowResult(false);
+    setSelectedAnswer(null);
+    setQuest(questions.length);
+    setTestStarted(true);
   };
 
   return (
     <div className="container-body">
-      <div style={{}} className="container">
-        {showresult ? (
+      <div className="container">
+        {showResult ? (
           <TestResult
             quest={quest}
             correctAnswer={correctAnswer}
@@ -72,12 +75,16 @@ export default function Test() {
                   Question {currentQuestion + 1} / {quest}
                 </span>
               </div>
-              <div className="question-text ">
+              <div className="question-text">
                 {questions[currentQuestion].question}
               </div>
-              <div className="difficulty">
+              <div className="difficulty-container">
                 <h3>Difficulty:</h3>
-                <select className="difficulty" onChange={handleDifficulty}>
+                <select
+                  disabled={testStarted}
+                  className="difficulty"
+                  onChange={handleDifficulty}
+                >
                   <option value="C2">C2</option>
                   <option value="C1">C1</option>
                   <option value="B2">B2</option>
@@ -88,20 +95,26 @@ export default function Test() {
               </div>
             </div>
             <div className="answer-section">
-              {questions[currentQuestion].answerOptions.map((ans, index) => {
-                return (
-                  <button
-                    key={index}
-                    onClick={() => handleAnswer(ans.isCorrect)}
-                    disabled={isAnswered}
-                  >
-                    {ans.answer}
-                  </button>
-                );
-              })}
-
+              {questions[currentQuestion].answerOptions.map((ans, index) => (
+                <button
+                  key={index}
+                  onClick={() => handleAnswer(ans.isCorrect, index)}
+                  disabled={selectedAnswer !== null}
+                  className={`
+                    button 
+                    ${selectedAnswer === index ? "selected" : ""}
+                    
+                  `}
+                >
+                  {ans.answer}
+                </button>
+              ))}
               <div className="actions">
-                <button disabled={!isAnswered} onClick={handleNext}>
+                <Link to="/courses">
+                  <button>Quit</button>
+                </Link>
+
+                <button disabled={selectedAnswer === null} onClick={handleNext}>
                   Next
                 </button>
               </div>

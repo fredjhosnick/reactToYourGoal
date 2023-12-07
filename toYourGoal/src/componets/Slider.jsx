@@ -18,7 +18,6 @@ export default function Slider({ slides }) {
   return (
     <div className="slider">
       <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide} />
-      <FaArrowAltCircleRight className="right-arrow" onClick={nextSlide} />
       {Images.map((slide, index) => {
         return (
           <div
@@ -31,6 +30,7 @@ export default function Slider({ slides }) {
           </div>
         );
       })}
+      <FaArrowAltCircleRight className="right-arrow" onClick={nextSlide} />
     </div>
   );
 }
