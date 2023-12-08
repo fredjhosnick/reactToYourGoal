@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "./Signup.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Validation from "../SignUpValidation";
+import axios from "axios";
+import { motion } from "framer-motion";
 
 export default function SignIn() {
   const [values, setValues] = useState({
@@ -10,6 +12,7 @@ export default function SignIn() {
     password: "",
   });
 
+  const navigate = useNavigate();
   const [errors, setErrors] = useState({});
   const handleInput = (e) => {
     setValues((prev) => ({ ...prev, [e.target.name]: [e.target.value] }));
@@ -17,11 +20,25 @@ export default function SignIn() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors(Validation(values));
+    if (errors.name === "" && errors.email === "" && errors.password === "") {
+      axios
+        .post("http://localhost:8081/signup", values)
+        .then((res) => {
+          navigate("/login");
+        })
+        .catch((err) => console.log(err));
+    }
   };
   return (
-    <div className=" container-body ">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 3 }}
+      className=" container-body "
+    >
       <div className="container">
-        <form className="form" id="signUpForm" onSubmit={handleSubmit}>
+        <form className="form" onSubmit={handleSubmit}>
           <h2>Sign Up</h2>
           <div className="info-form">
             <label htmlFor="name">Name:</label>
@@ -58,20 +75,14 @@ export default function SignIn() {
             )}
           </div>
           <div className="btn-form">
-            <Link>
-              <button className="button-login" type="submit">
-                Sign Up
-              </button>
-            </Link>
+            <button className="button-login" type="submit">
+              SignUp
+            </button>
             <p>You are agree with our terms and policies</p>
-            <Link to="/login">
-              <button className="button-signup" type="submit">
-                Login
-              </button>
-            </Link>
+            <Link to="/login">Login</Link>
           </div>
         </form>
       </div>
-    </div>
+    </motion.div>
   );
 }

@@ -55,7 +55,6 @@ label {
 input {
   width: 100%;
   padding: 15px 0;
-
   margin-bottom: 10px;
   outline: none;
   font-size: 18px;
@@ -67,26 +66,36 @@ input {
 .form a {
   text-decoration: none;
 }
+.form .btn-form {
+  width: 80%;
+  margin: 20px;
+}
+.btn-form a {
+  color: white;
+  padding: 12px 50px;
+  border: none;
+  border-radius: 4px;
+  width: 100%;
+  margin: 20px;
+  color: var(--textDarkColor);
+  border: 1px solid var(--textDarkColor);
+}
 
 .btn-form button {
   background-color: #4caf50;
   color: white;
-  padding: 10px;
+  padding: 12px;
   border: none;
   border-radius: 4px;
-
   cursor: pointer;
-  width: 100%;
+  width: 40%;
+}
+.btn-form p {
+  width: 80%;
+  height: 10%;
+  margin: 20px auto;
 }
 
 button:hover {
   background-color: #45a049;
-}
-.form .button-signup {
-  background-color: transparent;
-  color: var(--textLightColor);
-  border: 1px solid var(--textLightColor);
-  margin-bottom: 10px;
-  margin-top: 10px;
-  width: 100%;
 }

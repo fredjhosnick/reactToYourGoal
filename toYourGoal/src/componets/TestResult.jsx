@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Test.css";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export default function TestResult({ quest, correctAnswer, handlePlay }) {
   const [text, setText] = useState("");
@@ -39,7 +40,12 @@ export default function TestResult({ quest, correctAnswer, handlePlay }) {
   }, [correctAnswer]);
 
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 3 }}
+    >
       <div className="score-section">
         <h2>Completed!!</h2>
 
@@ -56,6 +62,6 @@ export default function TestResult({ quest, correctAnswer, handlePlay }) {
           <button onClick={handlePlay}>Test Again</button>
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 }

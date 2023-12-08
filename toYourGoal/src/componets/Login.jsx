@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import "./Login.css";
-import { Link } from "react-router-dom";
-import Validation from "../LoginValidation";
+import { Link, useNavigate } from "react-router-dom";
+import Validation from "../LoginValidation.js";
+import axios from "axios";
+import { motion } from "framer-motion";
 
 function Login() {
   const [values, setValues] = useState({
     email: "",
     password: "",
   });
+  const navigate = useNavigate();
 
   const [errors, setErrors] = useState({});
   const handleInput = (e) => {
@@ -16,11 +19,29 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors(Validation(values));
+    if (errors.email === "" && errors.password === "") {
+      axios
+        .post("http://localhost:8081/login", values)
+        .then((res) => {
+          if (res.data === "Success") {
+            navigate("/profile");
+          } else {
+            alert("No record existed!!");
+          }
+        })
+        .catch((err) => console.log(err));
+    }
   };
   return (
-    <div className=" container-body ">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 3 }}
+      className=" container-body "
+    >
       <div className="container">
-        <form className="form" id="signUpForm" onSubmit={handleSubmit}>
+        <form className="form" onSubmit={handleSubmit}>
           <h2>Sign In</h2>
           <div className="info-form">
             <label htmlFor="email">Email:</label>
@@ -28,6 +49,7 @@ function Login() {
               onChange={handleInput}
               type="email"
               id="email"
+              placeholder="Enter Email..."
               name="email"
               required
             />
@@ -36,6 +58,7 @@ function Login() {
             <input
               onChange={handleInput}
               type="password"
+              placeholder="Enter Password..."
               id="password"
               name="password"
               required
@@ -48,17 +71,12 @@ function Login() {
             <button className="button-login" type="submit">
               Login
             </button>
-
             <p>You are agree with our terms and policies</p>
-            <Link to="/singUp">
-              <button className="button-signup" type="submit">
-                Sign Up
-              </button>
-            </Link>
+            <Link to="/singUp">Sign Up</Link>
           </div>
         </form>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

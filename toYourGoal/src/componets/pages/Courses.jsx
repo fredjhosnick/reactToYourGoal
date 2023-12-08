@@ -2,6 +2,7 @@ import "./Courses.css";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Axios from "axios";
+import { motion } from "framer-motion";
 
 export default function Courses() {
   const [ourCoursePage, setOurCoursePage] = useState([]);
@@ -41,7 +42,12 @@ export default function Courses() {
   };
   // ====================================================
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 3 }}
+    >
       <div className="container-courses">
         <div className="left-menu">
           <div className="category-input">
@@ -109,6 +115,6 @@ export default function Courses() {
           </div>
         </div>
       </div>
-    </>
+    </motion.div>
   );
 }

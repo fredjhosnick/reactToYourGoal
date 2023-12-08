@@ -3,6 +3,7 @@ import "./Test.css";
 import questions from "../QuizData";
 import TestResult from "./TestResult";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export default function Test() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -13,7 +14,7 @@ export default function Test() {
   const [testStarted, setTestStarted] = useState(false);
 
   const handleAnswer = (isCorrect, index) => {
-    setSelectedAnswer(index); // Almacena la respuesta seleccionada
+    setSelectedAnswer(index);
     if (isCorrect) {
       setCorrectAnswer(correctAnswer + 1);
     }
@@ -59,7 +60,13 @@ export default function Test() {
   };
 
   return (
-    <div className="container-body">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 3 }}
+      className="container-body"
+    >
       <div className="container">
         {showResult ? (
           <TestResult
@@ -122,6 +129,6 @@ export default function Test() {
           </>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }

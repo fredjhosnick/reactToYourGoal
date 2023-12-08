@@ -4,16 +4,16 @@ import { Link } from "react-router-dom";
 import Slider from "../Slider";
 import { Images } from "../../data";
 import OurCourses from "../OurCourses";
-
-// import banner1 from "../../../public/imgs/banner-img-1.jpg";
-// import banner2 from "../../../public/imgs/banner-img2.jpg";
-// import banner3 from "../../../public/imgs/banner-img3.jpg";
-// import banner4 from "../../../public/imgs/banner-img4.jpg";
-// import banner5 from "../../../public/imgs/banner-img5.jpg";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 3 }}
+    >
       <div className="banner">
         <div className="textBanner">
           <h1>
@@ -166,6 +166,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </>
+    </motion.div>
   );
 }

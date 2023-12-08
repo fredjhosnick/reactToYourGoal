@@ -4,10 +4,16 @@ import { Link } from "react-router-dom";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { motion } from "framer-motion";
 
 export default function Contact() {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 3 }}
+    >
       <div className="constact-container">
         <div className="contact-us-title">
           <h1>Contact Us</h1>
@@ -104,6 +110,6 @@ export default function Contact() {
           </div>
         </div>
       </div>
-    </>
+    </motion.div>
   );
 }

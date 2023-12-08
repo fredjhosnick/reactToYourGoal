@@ -1,0 +1,33 @@
+:root {
+  --absoluteDarkColor: #000;
+  --absoluteLightColor: #fff;
+  --primayColor: #055a69;
+  --primaryLightColor: #0097b2;
+  --secondaryColor: #e4e4e7;
+  --textDarkColor: #191919;
+  --textLightColor: #303031;
+  --textLightgrayColor: #b5b5b9;
+}
+.container-body {
+  background-image: linear-gradient(
+    var(--primaryLightColor),
+    var(--primayColor)
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: var(--textLightColor);
+}
+.container {
+  background-color: var(--secondaryColor);
+  width: 500px;
+  min-height: 250px;
+  color: var(--absoluteLightColor);
+  min-height: min-content;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: space-evenly;
+}

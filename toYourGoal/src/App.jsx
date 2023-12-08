@@ -10,6 +10,7 @@ import About from "./componets/pages/About";
 import Footer from "./componets/Footer";
 import Test from "./componets/Test";
 import TestResult from "./componets/TestResult";
+import Profile from "./componets/Profile";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/test" element={<Test />} />
         <Route path="/testresult" element={<TestResult />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
       <Footer />
     </div>
