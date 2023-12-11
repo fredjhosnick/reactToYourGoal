@@ -44,7 +44,7 @@ export default function TestResult({ quest, correctAnswer, handlePlay }) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 3 }}
+      transition={{ duration: 1 }}
     >
       <div className="score-section">
         <h2>Completed!!</h2>

@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { TeacherProfile } from "./TeacherProfile";
 
 export default function Profile() {
   return (
@@ -8,9 +9,8 @@ export default function Profile() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 3 }}
-      className="container-body"
     >
-      <div className="container">Teacher</div>
+      <TeacherProfile />
     </motion.div>
   );
 }

@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 import logo from "../assets/logo.png";
 import "./Navbar.css";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const history = useNavigate();
+  const handleLogout = () => {
+    localStorage.removeItem("isLoggedIn");
+
+    history.push("/login");
+  };
 
   return (
     <nav>
@@ -25,11 +31,13 @@ export default function Navbar() {
             Home
           </Link>
         </li>
+
         <li>
           <NavLink to="/courses" onClick={() => setMenuOpen(false)}>
             Courses
           </NavLink>
         </li>
+
         <li>
           <NavLink to="/about" onClick={() => setMenuOpen(false)}>
             About us
@@ -45,10 +53,17 @@ export default function Navbar() {
             Sign Up
           </NavLink>
         </li>
+
         <li>
-          <NavLink to="/login" onClick={() => setMenuOpen(false)}>
-            Login
-          </NavLink>
+          {localStorage.getItem("isLoggedIn") === "true" ? (
+            <NavLink to="/login" onClick={handleLogout}>
+              LogOut
+            </NavLink>
+          ) : (
+            <NavLink to="/login" onClick={() => setMenuOpen(false)}>
+              Login
+            </NavLink>
+          )}
         </li>
       </ul>
     </nav>

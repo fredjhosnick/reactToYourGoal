@@ -5,16 +5,18 @@ import Validation from "../LoginValidation.js";
 import axios from "axios";
 import { motion } from "framer-motion";
 
-function Login() {
+function Login({ handleClcik }) {
   const [values, setValues] = useState({
     email: "",
     password: "",
   });
+  const [check, setCheck] = useState(false);
   const navigate = useNavigate();
 
   const [errors, setErrors] = useState({});
   const handleInput = (e) => {
     setValues((prev) => ({ ...prev, [e.target.name]: [e.target.value] }));
+    setCheck(true);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,6 +26,7 @@ function Login() {
         .post("http://localhost:8081/login", values)
         .then((res) => {
           if (res.data === "Success") {
+            localStorage.setItem("isLoggedIn", "true");
             navigate("/profile");
           } else {
             alert("No record existed!!");
@@ -37,7 +40,7 @@ function Login() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 3 }}
+      transition={{ duration: 1 }}
       className=" container-body "
     >
       <div className="container">
@@ -68,7 +71,11 @@ function Login() {
             )}
           </div>
           <div className="btn-form">
-            <button className="button-login" type="submit">
+            <button
+              onClick={handleClcik}
+              className="button-login"
+              type="submit"
+            >
               Login
             </button>
             <p>You are agree with our terms and policies</p>
