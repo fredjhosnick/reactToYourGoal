@@ -97,15 +97,15 @@
   height: 60px;
   margin: 0 auto;
 }
-.btn {
+.btn-ourcourse {
   text-align: center;
   width: 250px;
   margin: 0 auto;
 }
-.btn a {
+.btn-ourcourse a {
   text-decoration: none;
 }
-.btn a button {
+.btn-ourcourse a button {
   width: 100%;
   border-radius: 10px;
   font-size: 20px;
@@ -115,7 +115,7 @@
   border: none;
   font-family: "Be Vietnam Pro", sans-serif;
 }
-.btn button:hover {
+.btn-ourcourse button:hover {
   background-color: var(--primaryLightColor);
   color: var(--absoluteLightColor);
 }

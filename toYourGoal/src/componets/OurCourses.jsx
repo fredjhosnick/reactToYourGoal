@@ -48,7 +48,7 @@ export default function OurCourses() {
               <h3>{homeCourse.course}</h3>
               <p>{homeCourse.description}</p>
             </div>
-            <div className="btn">
+            <div className="btn-ourcourse">
               <Link to="/courses">
                 <button>Go to Courses</button>
               </Link>

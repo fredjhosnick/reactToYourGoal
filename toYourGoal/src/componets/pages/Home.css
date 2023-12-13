@@ -101,51 +101,54 @@
 
 .frequently-answer-container {
   width: 80%;
-
+  height: 80vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 30px;
-  background-color: var(--secondaryColor);
+  align-items: center;
   margin: 20px auto;
-  border-radius: 10px;
-  color: var(--textLightColor);
+}
+.title-frequently-answer {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0 auto;
+}
+.answers-questions {
+  width: 40%;
+}
 
-  padding: 10px;
-}
 .question-answer-item {
-  margin: 15px auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
 .question {
-  width: 85%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  gap: 10px;
-  align-items: center;
-  border-radius: 10px;
+  padding: 10px;
   border: 1px solid var(--textLightColor);
-}
-.errollment-our-courses {
-  width: 85%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  gap: 25px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
   align-items: center;
-  border-radius: 10px;
-  border: 1px solid var(--textLightColor);
 }
 .anwer {
-  width: 80%;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--textLightColor);
 }
-.question-answer-item button {
-  border: none;
-  border-radius: 5px;
+.question h3 {
+  width: 60%;
 }
-.question-answer-item button:hover {
-  background-color: var(--primaryLightColor);
-  color: var(--absoluteLightColor);
+.question .btn-question {
+  width: 15%;
 }
 footer {
   display: flex;

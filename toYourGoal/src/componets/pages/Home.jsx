@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
 import Slider from "../Slider";
 import { Images } from "../../data";
 import OurCourses from "../OurCourses";
 import { motion } from "framer-motion";
+import BasicAccordion from "../Acordion";
 
 export default function Home() {
+  const [showInfo, setShowInfo] = useState(false);
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -127,43 +129,7 @@ export default function Home() {
           </p>
         </div>
         <div className="answers-questions">
-          <div className="question-answer-item">
-            <div className="question">
-              <h3>Can I enroll in multiple courses at once?</h3>
-              <div>
-                <button>
-                  <span className="material-symbols-outlined"> add </span>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div className="question-answer-item">
-            <div className="question">
-              <h3>Can I enroll in multiple courses at once?</h3>
-              <div>
-                <button>
-                  <span className="material-symbols-outlined"> close </span>
-                </button>
-              </div>
-            </div>
-            <div className="anwer">
-              <p>
-                Absolutly! You can enroll in multiple courses simultaneously and
-                accsess them at your convenience.
-              </p>
-            </div>
-            <div className="errollment-our-courses">
-              <p>Enrollment Process for Different Courses</p>
-              <div>
-                <button>
-                  <span className="material-symbols-outlined">
-                    {" "}
-                    arrow_right_alt{" "}
-                  </span>
-                </button>
-              </div>
-            </div>
-          </div>
+          <BasicAccordion />
         </div>
       </div>
     </motion.div>
