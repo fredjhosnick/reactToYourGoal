@@ -29,7 +29,7 @@ export default function Home() {
           <p>Learn from Experts and reach your goals</p>
         </div>
         <div className="btn-banner">
-          <Link to="/courses">
+          <Link to="/singUp">
             <button className="explore-course">Explore Courses</button>
           </Link>
         </div>

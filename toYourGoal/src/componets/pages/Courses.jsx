@@ -3,10 +3,13 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Axios from "axios";
 import { motion } from "framer-motion";
+import Pagination from "@mui/material/Pagination";
 
 export default function Courses() {
   const [ourCoursePage, setOurCoursePage] = useState([]);
   const [search, setSearch] = useState([]);
+  const [page, setPage] = useState(1);
+  const coursesPerPage = 3;
 
   // ========================================================================
   const filterResult = (catItem) => {
@@ -39,6 +42,14 @@ export default function Courses() {
           f.cat.toLowerCase().includes(event.target.value.toLowerCase())
       )
     );
+  };
+
+  const indexOfLastCourse = page * coursesPerPage;
+  const indexOfFirstCourse = indexOfLastCourse - coursesPerPage;
+  const currentCourses = search.slice(indexOfFirstCourse, indexOfLastCourse);
+  // ====================================================
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
   };
   // ====================================================
   return (
@@ -83,7 +94,7 @@ export default function Courses() {
 
         <div className="our-courses-container-pageCourse">
           <div className="our-courses-cards-pageCourse">
-            {search.map((coursePage, index) => (
+            {currentCourses.map((coursePage, index) => (
               <div key={index} className="our-courses-items-pageCourse">
                 <div className="image-pageCourse">
                   <img src={coursePage.img} alt="" />
@@ -112,6 +123,13 @@ export default function Courses() {
                 </div>
               </div>
             ))}
+            <Pagination
+              count={Math.ceil(search.length / coursesPerPage)}
+              page={page}
+              color="primary"
+              size="large"
+              onChange={handleChangePage}
+            />
           </div>
         </div>
       </div>

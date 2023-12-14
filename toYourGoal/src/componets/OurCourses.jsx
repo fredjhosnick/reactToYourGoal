@@ -2,9 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Axios from "axios";
 import "./OurCourses.css";
+import Pagination from "@mui/material/Pagination";
 
 export default function OurCourses() {
   const [ourCourses, setOurCourses] = useState([]);
+  const [page, setPage] = useState(1);
+  const coursesPerPage = 3;
 
   function getCourses() {
     Axios.get("https://thesultanmarket.com/api/v1/data.php").then((res) => {
@@ -16,6 +19,16 @@ export default function OurCourses() {
   useEffect(() => {
     getCourses();
   }, []);
+  const indexOfLastCourse = page * coursesPerPage;
+  const indexOfFirstCourse = indexOfLastCourse - coursesPerPage;
+  const currentCourses = ourCourses.slice(
+    indexOfFirstCourse,
+    indexOfLastCourse
+  );
+
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+  };
 
   return (
     <div className="our-courses-container">
@@ -28,8 +41,9 @@ export default function OurCourses() {
           perspiciatis quaerat culpa?
         </p>
       </div>
+
       <div className="our-courses-cards">
-        {ourCourses.map((homeCourse, index) => (
+        {currentCourses.map((homeCourse, index) => (
           <div key={index} className="our-courses-items">
             <div className="image">
               <img src={homeCourse.img} alt="" />
@@ -49,12 +63,19 @@ export default function OurCourses() {
               <p>{homeCourse.description}</p>
             </div>
             <div className="btn-ourcourse">
-              <Link to="/courses">
+              <Link to="/singUp">
                 <button>Go to Courses</button>
               </Link>
             </div>
           </div>
         ))}
+        <Pagination
+          count={Math.ceil(ourCourses.length / coursesPerPage)}
+          page={page}
+          color="primary"
+          size="large"
+          onChange={handleChangePage}
+        />
       </div>
     </div>
   );

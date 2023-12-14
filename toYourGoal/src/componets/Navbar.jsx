@@ -31,12 +31,25 @@ export default function Navbar() {
             Home
           </Link>
         </li>
-
-        <li>
-          <NavLink to="/courses" onClick={() => setMenuOpen(false)}>
-            Courses
-          </NavLink>
-        </li>
+        {localStorage.getItem("isLoggedIn") === "true" ? (
+          <>
+            <li>
+              <NavLink to="/courses" onClick={() => setMenuOpen(false)}>
+                Courses
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/profile" onClick={() => setMenuOpen(false)}>
+                Teacher
+              </NavLink>
+            </li>
+          </>
+        ) : (
+          <>
+            <li></li>
+            <li></li>
+          </>
+        )}
 
         <li>
           <NavLink to="/about" onClick={() => setMenuOpen(false)}>
@@ -48,23 +61,40 @@ export default function Navbar() {
             Contact
           </NavLink>
         </li>
-        <li>
-          <NavLink to="/singUp" onClick={() => setMenuOpen(false)}>
-            Sign Up
-          </NavLink>
-        </li>
 
-        <li>
-          {localStorage.getItem("isLoggedIn") === "true" ? (
-            <NavLink to="/login" onClick={handleLogout}>
+        {localStorage.getItem("isLoggedIn") === "true" ? (
+          <li>
+            <NavLink
+              to="/login"
+              onClick={handleLogout}
+              style={{ backgroundColor: "red", color: "white" }}
+            >
               LogOut
             </NavLink>
-          ) : (
-            <NavLink to="/login" onClick={() => setMenuOpen(false)}>
-              Login
-            </NavLink>
-          )}
-        </li>
+          </li>
+        ) : (
+          <>
+            <li>
+              <NavLink
+                to="/singUp"
+                onClick={() => setMenuOpen(false)}
+                style={{ backgroundColor: "green", color: "white" }}
+              >
+                Sign Up
+              </NavLink>
+            </li>
+            <li>
+              {" "}
+              <NavLink
+                to="/login"
+                onClick={() => setMenuOpen(false)}
+                style={{ backgroundColor: "#0097b2", color: "white" }}
+              >
+                Login
+              </NavLink>
+            </li>
+          </>
+        )}
       </ul>
     </nav>
   );
