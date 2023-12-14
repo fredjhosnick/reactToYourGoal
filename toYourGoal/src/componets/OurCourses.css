@@ -12,7 +12,7 @@
 .our-courses-container {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 90%;
   margin: 30px auto 20px;
 }
 .text-our-couses {
@@ -28,23 +28,24 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
+  margin: auto;
 }
 .our-courses-items {
-  width: 350px;
+  width: 320px;
   height: 410px;
   padding: 10px;
   background-color: var(--secondaryColor);
   border-radius: 10px;
 }
 .our-courses-items .image {
-  width: 350px;
+  width: 320px;
   height: 170px;
   margin: auto;
   object-position: top initial;
   border-radius: 10px;
 }
 .our-courses-cards .image img {
-  width: 350px;
+  width: 320px;
   height: 170px;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
@@ -119,3 +120,4 @@
   background-color: var(--primaryLightColor);
   color: var(--absoluteLightColor);
 }
+

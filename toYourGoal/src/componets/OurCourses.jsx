@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import Axios from "axios";
 import "./OurCourses.css";
 import Pagination from "@mui/material/Pagination";
+import Stack from "@mui/material/Stack";
 
 export default function OurCourses() {
   const [ourCourses, setOurCourses] = useState([]);
   const [page, setPage] = useState(1);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
   const coursesPerPage = 3;
 
   function getCourses() {
@@ -18,6 +20,18 @@ export default function OurCourses() {
   }
   useEffect(() => {
     getCourses();
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
   const indexOfLastCourse = page * coursesPerPage;
   const indexOfFirstCourse = indexOfLastCourse - coursesPerPage;
@@ -69,14 +83,24 @@ export default function OurCourses() {
             </div>
           </div>
         ))}
-        <Pagination
-          count={Math.ceil(ourCourses.length / coursesPerPage)}
-          page={page}
-          color="primary"
-          size="large"
-          onChange={handleChangePage}
-        />
+       
       </div>
+      {windowWidth > 800 && (
+        <Stack
+          direction="row"
+          justifyContent="center"
+          alignItems="center"
+          spacing={2}
+        >
+          <Pagination
+            count={Math.ceil(ourCourses.length / coursesPerPage)}
+            page={page}
+            color="primary"
+            size="large"
+            onChange={handleChangePage}
+          />
+        </Stack>
+      )}
     </div>
   );
 }

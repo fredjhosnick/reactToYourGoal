@@ -5,11 +5,13 @@ footer {
   width: 100%;
   background-color: var(--secondaryColor);
   color: var(--textLightColor);
+  margin: 20px 0 0;
 }
 footer {
   position: relative;
   height: 30vh;
   bottom: 0;
+  margin: 20px 0 0;
 }
 .contact {
   margin: 10px 10px 10px 110px;
