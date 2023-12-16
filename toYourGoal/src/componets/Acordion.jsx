@@ -14,7 +14,9 @@ export default function BasicAccordion() {
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
-          <Typography>Can I enroll in multiple courses at once?</Typography>
+          <Typography style={{ fontSize: "12px" }}>
+            Can I enroll in multiple courses at once?
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
@@ -29,7 +31,9 @@ export default function BasicAccordion() {
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
-          <Typography>Can I enroll in multiple courses at once?</Typography>
+          <Typography style={{ fontSize: "12px" }}>
+            Can I enroll in multiple courses at once?
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>

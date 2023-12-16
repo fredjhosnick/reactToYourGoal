@@ -1,14 +1,14 @@
 :root {
   --absoluteDarkColor: #000;
   --absoluteLightColor: #fff;
-  --primayColor: #055a69;
+  --primaryColor: #055a69;
   --primaryLightColor: #0097b2;
   --secondaryColor: #e4e4e7;
   --textDarkColor: #191919;
   --textLightColor: #303031;
   --textLightgrayColor: #b5b5b9;
 }
-.allContainer{
+.allContainer {
   margin: 0 auto 30px;
 }
 .contact-us-title {
@@ -17,16 +17,11 @@
 .contact-information-full-container {
   display: flex;
   flex-direction: row;
-  
- 
-  
 }
 .constact-container {
   width: 100%;
   height: 100vh;
-  margin: 0;
-  
-  
+  margin: 20px auto;
 }
 
 .form-contact-container {
@@ -35,7 +30,7 @@
   justify-content: flex-start;
   align-items: center;
   width: 70%;
- min-height: 80vh;
+  min-height: 80vh;
   margin: 20px 0 20px 20px;
   border: 0.5px solid rgb(214, 212, 212);
   padding: 20px;
@@ -262,44 +257,32 @@ form {
   margin: 0;
 }
 
-footer {
-  position: relative;
-  height: 30vh;
-  bottom: 0;
-}
 @media only screen and (max-width: 800px) {
-  .constact-container {
-    display: flex;
-    flex-direction: column;
+  .allContainer {
+    margin: 20px auto 0;
+    height: 150vh;
   }
   .contact-us-title {
-    margin: 10px auto 20px;
+    text-align: center;
+    font-size: 18px;
   }
   .contact-information-full-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: auto;
-  }
-  .constact-container {
-    width: 100%;
-  }
-
-  .form-contact-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80%;
-    height: 90vh;
+  }
+  .constact-container {
+    margin: 0 auto;
+  }
+
+  .form-contact-container {
     margin: 0 auto;
     border: 0.5px solid rgb(214, 212, 212);
     padding: 20px;
     background-color: var(--secondaryColor);
-    border-radius: 10px;
     border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+    border-top-right-radius: 10px;
   }
   form {
     width: 100%;
@@ -431,12 +414,12 @@ footer {
   }
 
   .contact-information-container {
-    width: 85%;
+    width: 73%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 5px;
-    margin: 5px auto;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto;
     padding: 10px;
     background-color: var(--secondaryColor);
     border: 0.5px solid rgb(214, 212, 212);
@@ -446,6 +429,8 @@ footer {
   .contact-information-container a {
     text-decoration: none;
     color: var(--textLightColor);
+    margin-bottom: 20px;
+    font-size: 15px;
   }
   .email-cont-info {
     display: flex;
@@ -494,6 +479,7 @@ footer {
     width: 80%;
     height: 20%;
     margin: 0 auto;
+    font-size: 15px;
     gap: 10px;
     border-radius: 10px;
     display: flex;
@@ -529,14 +515,8 @@ footer {
     width: 100%;
     margin: 0 auto;
   }
-  .icons-media-contact ul li img {
-    width: 20px;
+  .icons-media-contact ul li .img {
     margin: 0;
-  }
-
-  footer {
-    position: relative;
-    height: 40vh;
-    bottom: 0;
+    font-size: 50px;
   }
 }

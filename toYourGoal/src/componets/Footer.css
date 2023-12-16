@@ -6,13 +6,11 @@ footer {
   background-color: var(--secondaryColor);
   color: var(--textLightColor);
   margin: 20px 0 0;
-}
-footer {
   position: relative;
-  height: 30vh;
+  height: 40vh;
   bottom: 0;
-  margin: 20px 0 0;
 }
+
 .contact {
   margin: 10px 10px 10px 110px;
 }
@@ -69,6 +67,16 @@ footer {
 }
 
 @media only screen and (max-width: 800px) {
+  footer {
+    width: 100%;
+    background-color: var(--secondaryColor);
+    color: var(--textLightColor);
+    margin: 0;
+
+    height: 40vh;
+    bottom: 0;
+  }
+
   .contact {
     margin: 5px;
   }
@@ -86,9 +94,7 @@ footer {
     height: 40px;
   }
   footer {
-    position: relative;
-    height: 40vh;
-    bottom: 0;
+    margin: 20px auto;
   }
   .footer-info {
     display: flex;
