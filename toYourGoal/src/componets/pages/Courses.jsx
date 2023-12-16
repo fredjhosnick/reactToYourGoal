@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Axios from "axios";
 import { motion } from "framer-motion";
 import Pagination from "@mui/material/Pagination";
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 export default function Courses() {
   const [ourCoursePage, setOurCoursePage] = useState([]);
@@ -21,6 +21,7 @@ export default function Courses() {
       setSearch(result);
     }
   };
+
   // ==============================================================================
   function getCoursePage() {
     Axios.get("https://thesultanmarket.com/api/v1/data.php").then((res) => {
@@ -47,7 +48,7 @@ export default function Courses() {
 
   const indexOfLastCourse = page * coursesPerPage;
   const indexOfFirstCourse = indexOfLastCourse - coursesPerPage;
-  const currentCourses = ourCoursePage.slice(indexOfFirstCourse, indexOfLastCourse);
+  const currentCourses = search.slice(indexOfFirstCourse, indexOfLastCourse);
   // ====================================================
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -104,12 +105,13 @@ export default function Courses() {
                   <div className="time-level-ourcourses-pageCourse">
                     <h5>{coursePage.duration} weeks</h5>
                     <h5>{coursePage.level}</h5>
-                   
                   </div>
                   <div className="name-teacher-our-couses-pageCourse">
                     <h4>{coursePage.cat}</h4>
                     <div>
-                    <button><ShoppingCartIcon className="cart"  size="small" /></button>
+                      <button>
+                        <ShoppingCartIcon className="cart" size="small" />
+                      </button>
                     </div>
                   </div>
                 </div>
@@ -128,15 +130,14 @@ export default function Courses() {
                 </div>
               </div>
             ))}
-           
           </div>
           <Pagination
-              count={Math.ceil(search.length / coursesPerPage)}
-              page={page}
-              color="primary"
-              size="large"
-              onChange={handleChangePage}
-            />
+            count={Math.ceil(search.length / coursesPerPage)}
+            page={page}
+            color="primary"
+            size="large"
+            onChange={handleChangePage}
+          />
         </div>
       </div>
     </motion.div>
